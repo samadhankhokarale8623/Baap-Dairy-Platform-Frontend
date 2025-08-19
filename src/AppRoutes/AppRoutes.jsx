@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
-import Register from "../pages/Register/Register";
+import Register from "../Pages/Register/Register";
 // import Dashboard from "../Components/dashboard/Dashboard";
 import Home from "../Pages/home/Home";
 import MilkCollectionPage from "../Pages/milkcollectionpage/MilkCollectionPage";
