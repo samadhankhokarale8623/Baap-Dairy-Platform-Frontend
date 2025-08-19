@@ -1,9 +1,16 @@
 import axios from "axios";
 
-export const API = axios.create({
-  // baseURL: "http://localhost:3000/api",
-    baseURL: " https://dairy-backend-3vlc.onrender.com/api",
+// 1. Render वर टाकलेली URL Environment Variable मधून आपोआप येईल.
+// 2. जर व्हेरिएबल सापडला नाही (म्हणजे लोकल कॉम्प्युटरवर चालवताना),
+//    तर तो 'http://localhost:3000/api' ही डीफॉल्ट URL वापरेल.
+const apiUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000/api";
 
+// डीबगिंगसाठी: कन्सोलमध्ये कोणती URL वापरली जात आहे ते तपासा.
+console.log("Using API Base URL:", apiUrl);
+
+export const API = axios.create({
+  // baseURL आता 'apiUrl' या व्हेरिएबलमधून येईल.
+  baseURL: apiUrl,
   withCredentials: false,
 });
 
